@@ -2,14 +2,24 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>dodeca의 github 페이지</title>
+    <title>안녕하세요</title>
     <script type="text/javascript">
-        setTimeout(function() {
-            window.location.href = 'https://dodeca05.github.io/dev-blog/';
-        }, 5000); // 5000밀리초 = 5초
+        var count = 5; // 시작 카운트 (초)
+        var countdown = setInterval(function() {
+            document.getElementById('countdown').innerHTML = count;
+            count--;
+            if (count < 0) {
+                clearInterval(countdown);
+                window.location.href = 'https://dodeca05.github.io/dev-blog/';
+            }
+        }, 1000); // 1000밀리초 = 1초
     </script>
 </head>
 <body>
     <p>안녕하세요</p>
+    <p>이 페이지에 뭘 하면 좋을까요?</p>
+    <p>일단은 제가 관리하는 블로그로</p>
+    <p><span id="countdown">5</span>초 후에 이동됩니다.</p>
 </body>
 </html>
+
